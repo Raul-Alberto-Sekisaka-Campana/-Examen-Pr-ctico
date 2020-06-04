@@ -1,0 +1,31 @@
+{{> header}}
+<div class="container">
+    <h1>Lista de Participantes</h1>
+    {{#if estatales }}
+    <table class="table table-dark table-hover">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <th>nombre</th>
+            <th>corriente</th>
+            <th>nacionalidad</th>
+            <th>pintura</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each estatales }}
+        <tr>
+            <td>{{ _id }}</td>
+            <td>{{ nombre }}</td>
+            <td>{{ corriente }}</td>
+            <td>{{ nacionalidad }}</td>
+            <td><img src="..//images/{{ pintura }}" width="580px" height="450px"/></td>
+        </tr>
+        {{/ each }}
+        </tbody>
+    </table>
+    {{ else }}
+    <div>No se encontraron Participantes.</div>
+    {{/if}}
+</div>
+{{> footer}}
